@@ -1,11 +1,23 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:space_x/core/helpers/bloc_observer.dart';
 import 'package:space_x/core/routing/app_router.dart';
 import 'package:space_x/core/routing/routes.dart';
 import 'package:space_x/core/thiming/colors.dart';
+import 'package:space_x/firebase_options.dart';
 
-void main() {
-  runApp( MyApp(appRouter: AppRouter(),));
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  Bloc.observer = MyBlocObserver();
+
+  runApp(MyApp(
+    appRouter: AppRouter(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -22,9 +34,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
-         primaryColor: ColorsManager.mainBlue,
-         scaffoldBackgroundColor: Colors.white,
-        
+          primaryColor: ColorsManager.mainBlue,
+          scaffoldBackgroundColor: Colors.white,
         ),
         onGenerateRoute: appRouter.generateRoute,
         initialRoute: Routes.loginScreen,
@@ -32,4 +43,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

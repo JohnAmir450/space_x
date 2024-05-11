@@ -10,6 +10,7 @@ class CustomTextFormField extends StatelessWidget {
       required this.hintText,
       this.isObscureText = false,
       this.suffixIcon,
+      this.onChanged,
       this.focusedBorder,
       this.enabledBorder,
       this.hintStyle,
@@ -27,10 +28,12 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputType? keyboardType;
   final TextEditingController? controller;
   final String? Function(String?) validator;
+  final void Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChanged,
       validator: validator,
       controller: controller,
       cursorColor: ColorsManager.mainBlue,

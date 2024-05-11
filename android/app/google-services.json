@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "173454341799",
+    "project_id": "space-x-9b8e1",
+    "storage_bucket": "space-x-9b8e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:173454341799:android:054df75d22641382490d82",
+        "android_client_info": {
+          "package_name": "com.example.space_x"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdBUVak7wAuRzSdxcdjX7Jrm2c5p8FNyU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
