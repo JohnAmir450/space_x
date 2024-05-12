@@ -15,9 +15,9 @@ class HomeScreen extends StatelessWidget {
           children: [
             const Text('Home Screen'),
             TextButton(onPressed: ()async{
+              context.pushReplacementNamed(Routes.loginScreen);
                 await CacheHelper.removeData(key: CacheKeys.loginKey);
-                context.pushReplacementNamed(Routes.loginScreen);
-            }, child: Icon(Icons.login_outlined))
+            }, child: const Icon(Icons.login_outlined))
           ],
         )),
       ),
