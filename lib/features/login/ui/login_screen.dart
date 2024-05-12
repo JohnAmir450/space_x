@@ -38,7 +38,7 @@ class LoginScreen extends StatelessWidget {
                   const PasswordAndEmail(),
                   verticalSpace(40),
                   CustomTextButton(
-                      onPressed: (){
+                      onPressed: ()async{
                         if(context.read<LoginCubit>().formKey.currentState!.validate()){
                           context.read<LoginCubit>().login();
                         }
