@@ -2,6 +2,9 @@ import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
+import 'package:space_x/core/helpers/cache_helpers.dart';
+import 'package:space_x/core/helpers/cache_keys.dart';
+
 
 part 'login_state.dart';
 
@@ -17,7 +20,7 @@ class LoginCubit extends Cubit<LoginState> {
   try {
   final credential=await FirebaseAuth.instance.signInWithEmailAndPassword(email: emailController.text,
    password: passwordController.text);
-   print(credential.user!.email);
+   await CacheHelper.saveData(key: CacheKeys.loginKey,value: true);
    emit(LoginCubitSuccess());
 } on FirebaseAuthException catch (e) {
   emit(LoginCubitFailure(errorMessage: mapFirebaseAuthException(e)));
