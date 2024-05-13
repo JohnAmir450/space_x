@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:space_x/core/helpers/extentions.dart';
 import 'package:space_x/core/helpers/snak_bar_view.dart';
 import 'package:space_x/core/routing/routes.dart';
@@ -22,7 +21,9 @@ class LoginBlocListener extends StatelessWidget {
           showSnackBar(context,
               text: 'Logged in Successfully', color: Colors.green);
 
-          context.pushReplacementNamed(Routes.homeScreen);
+          context.pushReplacementNamed(
+            Routes.homeScreen,
+          );
         } else if (state is LoginCubitFailure) {
           return showSnackBar(context,
               text: state.errorMessage, color: Colors.red);
