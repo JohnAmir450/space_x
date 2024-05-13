@@ -5,7 +5,10 @@ import 'package:space_x/core/helpers/extentions.dart';
 import 'package:space_x/core/routing/routes.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  
+
+  const HomeScreen({super.key,});
+  
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +16,8 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Center(child: Column(
           children: [
-            const Text('Home Screen'),
+             const Text('Home Screen'),
+              
             TextButton(onPressed: ()async{
               context.pushReplacementNamed(Routes.loginScreen);
                 await CacheHelper.removeData(key: CacheKeys.loginKey);

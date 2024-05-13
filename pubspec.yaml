@@ -28,6 +28,8 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  cached_network_image: ^3.3.1
+  cloud_firestore: null
   cupertino_icons: ^1.0.6
   dio: ^5.4.3+1
   firebase_auth: null
@@ -39,6 +41,7 @@ dependencies:
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.10+1
   get_it: ^7.7.0
+  image_picker: ^1.1.1
   pretty_dio_logger: ^1.3.1
   shared_preferences: ^2.2.3
 

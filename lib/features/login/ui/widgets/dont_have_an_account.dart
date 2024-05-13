@@ -1,5 +1,8 @@
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:space_x/core/helpers/extentions.dart';
+import 'package:space_x/core/routing/routes.dart';
 
 import 'package:space_x/core/thiming/font_helper.dart';
 import 'package:space_x/core/thiming/styles.dart';
@@ -15,9 +18,9 @@ class DontHaveAnAccount extends StatelessWidget {
             text: 'Don\'t have an account? ',
             style: TextStyles.font14DarkBlueMedium),
         TextSpan(
-          // recognizer: TapGestureRecognizer()..onTap=(){
-          //   context.pushReplacementNamed(Routes.signUpScreen);
-          // },
+          recognizer: TapGestureRecognizer()..onTap=(){
+            context.pushReplacementNamed(Routes.signUpScreen);
+          },
             text: 'Sign Up',
             style: TextStyles.font13BlueRegular
                 .copyWith(fontWeight: FontWeightHelper.semiBold)),
