@@ -4,6 +4,13 @@ import 'package:space_x/core/thiming/colors.dart';
 import 'package:space_x/core/thiming/font_helper.dart';
 
 class TextStyles {
+
+  static const TextStyle font22BlackBold = TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeightHelper.bold,
+    color: Colors.black,
+  );
+
   static const TextStyle font24BlackBold = TextStyle(
     fontSize: 24,
     fontWeight: FontWeightHelper.bold,
@@ -58,6 +65,12 @@ class TextStyles {
    static const TextStyle font16WhiteSemiBold=TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
+    color: Colors.white,
+  );
+
+     static const TextStyle font26WhiteBold=TextStyle(
+    fontSize: 26,
+    fontWeight: FontWeightHelper.bold,
     color: Colors.white,
   );
 }

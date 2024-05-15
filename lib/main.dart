@@ -40,10 +40,21 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
         ),
         onGenerateRoute: appRouter.generateRoute,
-        initialRoute: CacheHelper.getData(key: CacheKeys.loginKey) == true ? Routes.homeScreen : Routes.loginScreen,
+        
+        initialRoute: _getInitialRoute()
 
 
       ),
     );
   }
+   String _getInitialRoute() {
+    bool? isLoggedIn = CacheHelper.getData(key: CacheKeys.loginKey) as bool?;
+    bool? isRegistered = CacheHelper.getData(key: CacheKeys.registerKey) as bool?;
+
+    if (isLoggedIn == true || isRegistered == true) {
+      return Routes.homeScreen;
+    } else {
+      return Routes.loginScreen;
+    }
+}
 }

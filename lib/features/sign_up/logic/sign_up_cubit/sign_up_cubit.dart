@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:meta/meta.dart';
+import 'package:space_x/core/helpers/cache_helpers.dart';
+import 'package:space_x/core/helpers/cache_keys.dart';
 import 'package:space_x/core/models/user_model.dart';
 
 part 'sign_up_state.dart';
@@ -59,7 +61,7 @@ class SignUpCubit extends Cubit<SignUpState> {
           .doc(credential.user!.uid)
           .set(userModel.toMap());
 
-
+        CacheHelper.saveData(key: CacheKeys.registerKey, value: true);
 
       emit(SignUpSuccessState());
     } on FirebaseAuthException catch (e) {
