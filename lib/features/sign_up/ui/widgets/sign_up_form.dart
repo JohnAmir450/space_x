@@ -106,7 +106,7 @@ class _SignUpFormState extends State<SignUpForm> {
                       return 'Please enter a valid password';
                     }
                   }),
-                  verticalSpace(8),
+              verticalSpace(8),
               PasswordValidations(
                   hasLowerCase: hasLowerCase,
                   hasUpperCase: hasUpperCase,

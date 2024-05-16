@@ -55,9 +55,9 @@ class SignUpScreen extends StatelessWidget {
                         },
                         buttonText: 'Sign Up',
                         textStyle: TextStyles.font16WhiteSemiBold),
-                        verticalSpace(40),
-                        const AlreadyHaveAccountText(),
-                        const SignUpBlocListener(),
+                    verticalSpace(40),
+                    const AlreadyHaveAccountText(),
+                    const SignUpBlocListener(),
                   ],
                 )
               ],

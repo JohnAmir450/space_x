@@ -8,17 +8,15 @@ class TermsAndConditions extends StatelessWidget {
   Widget build(BuildContext context) {
     return RichText(
       textAlign: TextAlign.center,
-      text:  TextSpan(children: [
+      text: TextSpan(children: [
         const TextSpan(
             text: 'By logging, you agree to our ',
             style: TextStyles.font13GreyRegular),
         TextSpan(
             text: 'Terms & Conditions ',
             style: TextStyles.font14DarkBlueMedium.copyWith(fontSize: 13)),
-        const TextSpan(
-            text: 'and ',
-            style: TextStyles.font13GreyRegular),
-             TextSpan(
+        const TextSpan(text: 'and ', style: TextStyles.font13GreyRegular),
+        TextSpan(
             text: 'Privacy Policy ',
             style: TextStyles.font14DarkBlueMedium.copyWith(fontSize: 13)),
       ]),

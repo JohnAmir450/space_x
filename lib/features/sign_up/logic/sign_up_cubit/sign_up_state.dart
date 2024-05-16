@@ -16,6 +16,7 @@ final class SignUpFailureState extends SignUpState {
 }
 
 final class ChangePasswordVisibilityState extends SignUpState {}
+
 final class PickedPhotoState extends SignUpState {
   final String profileImagePath;
 

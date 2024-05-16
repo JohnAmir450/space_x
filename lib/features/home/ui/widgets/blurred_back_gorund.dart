@@ -3,8 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class BlurredBackGroundImage extends StatelessWidget {
-  const BlurredBackGroundImage({super.key, required this.homeWidgets});
-  final Widget homeWidgets;
+  const BlurredBackGroundImage({super.key, required this.bodyWidgets});
+  final Widget bodyWidgets;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -19,7 +19,7 @@ class BlurredBackGroundImage extends StatelessWidget {
               ),
             ),
           ),
-          homeWidgets,
+          bodyWidgets,
         ]));
   }
 }

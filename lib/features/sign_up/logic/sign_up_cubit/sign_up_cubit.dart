@@ -32,17 +32,19 @@ class SignUpCubit extends Cubit<SignUpState> {
         : const Icon(Icons.visibility_off_outlined);
     emit(ChangePasswordVisibilityState());
   }
-    
-  Future<void> pickImage()async{
-    final imagePicker=ImagePicker();
-     pickedImage=await imagePicker.pickImage(source: ImageSource.gallery);
 
-    if(pickedImage!=null){
-      emit(PickedPhotoState(profileImagePath: pickedImage?.path ??'assets/images/default_profile_image.jpg'));
-    }else{
-      print ('Image selection cancelled.');
+  Future<void> pickImage() async {
+    final imagePicker = ImagePicker();
+    pickedImage = await imagePicker.pickImage(source: ImageSource.gallery);
+
+    if (pickedImage != null) {
+      emit(PickedPhotoState(
+          profileImagePath:
+              pickedImage?.path ?? 'assets/images/default_profile_image.jpg'));
+    } else {
+      print('Image selection cancelled.');
     }
-  } 
+  }
 
   Future<void> register() async {
     emit(SignUpLoadingState());
@@ -55,13 +57,14 @@ class SignUpCubit extends Cubit<SignUpState> {
           userName: userNameController.text,
           email: emailController.text,
           phoneNumber: passwordController.text,
-          profileImage: pickedImage?.path ??'assets/images/default_profile_image.jpg');
+          profileImage:
+              pickedImage?.path ?? 'assets/images/default_profile_image.jpg');
       await FirebaseFirestore.instance
           .collection('users')
           .doc(credential.user!.uid)
           .set(userModel.toMap());
 
-        CacheHelper.saveData(key: CacheKeys.registerKey, value: true);
+      CacheHelper.saveData(key: CacheKeys.registerKey, value: true);
 
       emit(SignUpSuccessState());
     } on FirebaseAuthException catch (e) {

@@ -1,11 +1,9 @@
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:space_x/core/helpers/extentions.dart';
 import 'package:space_x/core/thiming/styles.dart';
 
 import '../../../../core/routing/routes.dart';
-
 
 class AlreadyHaveAccountText extends StatelessWidget {
   const AlreadyHaveAccountText({super.key});
