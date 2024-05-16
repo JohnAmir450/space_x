@@ -4,6 +4,7 @@ part of 'home_cubit.dart';
 sealed class HomeState {}
 
 final class HomeInitial extends HomeState {}
+
 class HomeScreenCubitStateSuccess extends HomeState {
   final dynamic data; // Can be a map, list, or your custom user data model
 

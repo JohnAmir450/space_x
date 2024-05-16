@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_x/core/thiming/colors.dart';
 import 'package:space_x/core/thiming/styles.dart';
 
-
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField(
       {super.key,
@@ -41,23 +40,22 @@ class CustomTextFormField extends StatelessWidget {
       keyboardType: keyboardType,
       style: inputTextStyle ?? TextStyles.font14DarkBlueMedium,
       decoration: InputDecoration(
-        fillColor: ColorsManager.moreLighterGrey,
-        filled: true,
-        hintStyle: hintStyle ??
-            TextStyles.font14GreyRegular
-                .copyWith(color: ColorsManager.lightGrey),
-        hintText: hintText,
-        suffixIcon: suffixIcon,
-        isDense: true,
-        contentPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
-        enabledBorder: enabledBorder ??
-            customOutlineInputBorder(color: ColorsManager.lightGrey),
-        focusedBorder: focusedBorder ??
-            customOutlineInputBorder(color: ColorsManager.mainBlue),
-        errorBorder: customOutlineInputBorder(color: Colors.red),
-        focusedErrorBorder: customOutlineInputBorder(color: Colors.red)
-      ),
-      
+          fillColor: ColorsManager.moreLighterGrey,
+          filled: true,
+          hintStyle: hintStyle ??
+              TextStyles.font14GreyRegular
+                  .copyWith(color: ColorsManager.lightGrey),
+          hintText: hintText,
+          suffixIcon: suffixIcon,
+          isDense: true,
+          contentPadding:
+              EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
+          enabledBorder: enabledBorder ??
+              customOutlineInputBorder(color: ColorsManager.lightGrey),
+          focusedBorder: focusedBorder ??
+              customOutlineInputBorder(color: ColorsManager.mainBlue),
+          errorBorder: customOutlineInputBorder(color: Colors.red),
+          focusedErrorBorder: customOutlineInputBorder(color: Colors.red)),
     );
   }
 

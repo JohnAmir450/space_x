@@ -33,7 +33,8 @@ class ServerFailure extends Failure {
         } else {
           return ServerFailure('Unexpected Error, Please try again later');
         }
-        default:  return ServerFailure('Oops there was an error, Please try again'); 
+      default:
+        return ServerFailure('Oops there was an error, Please try again');
     }
   }
 

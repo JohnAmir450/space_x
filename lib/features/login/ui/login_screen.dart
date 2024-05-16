@@ -38,18 +38,22 @@ class LoginScreen extends StatelessWidget {
                   const PasswordAndEmail(),
                   verticalSpace(40),
                   CustomTextButton(
-                      onPressed: ()async{
-                        if(context.read<LoginCubit>().formKey.currentState!.validate()){
+                      onPressed: () async {
+                        if (context
+                            .read<LoginCubit>()
+                            .formKey
+                            .currentState!
+                            .validate()) {
                           context.read<LoginCubit>().login();
                         }
                       },
                       buttonText: 'Login',
                       textStyle: TextStyles.font16WhiteSemiBold),
-                       verticalSpace(16.h),
-                    const TermsAndConditions(),
-                    verticalSpace(60),
-                    const DontHaveAnAccount(),
-                    const LoginBlocListener()
+                  verticalSpace(16.h),
+                  const TermsAndConditions(),
+                  verticalSpace(60),
+                  const DontHaveAnAccount(),
+                  const LoginBlocListener()
                 ],
               )
             ],

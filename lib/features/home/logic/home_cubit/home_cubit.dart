@@ -21,7 +21,6 @@ class HomeCubit extends Cubit<HomeState> {
         emit(HomeScreenCubitStateError('No User Doc Found'));
       }
     } catch (e) {
-     
       emit(HomeScreenCubitStateError('An error occurred'));
     }
   }

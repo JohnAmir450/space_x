@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
       key: scaffoldKey,
       endDrawer: const CustomDrawer(),
       body: BlurredBackGroundImage(
-        homeWidgets: SingleChildScrollView(
+        bodyWidgets: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -41,13 +41,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 Align(
                   alignment: Alignment.bottomRight,
                   child: CircleAvatar(
-                    
                     backgroundColor: ColorsManager.purple.withOpacity(0.4),
                     child: IconButton(
                         onPressed: () {
                           scaffoldKey.currentState!.openEndDrawer();
                         },
-                        icon:const Icon(Icons.person_outline,color: Colors.white,)),
+                        icon: const Icon(
+                          Icons.person_outline,
+                          color: Colors.white,
+                        )),
                   ),
                 ),
                 verticalSpace(100.h),

@@ -11,7 +11,9 @@ class CustomTextButton extends StatelessWidget {
       this.verticalPadding,
       this.buttonWidth,
       this.buttonHeight,
-      required this.onPressed, required this.buttonText, required this.textStyle});
+      required this.onPressed,
+      required this.buttonText,
+      required this.textStyle});
   final double? borderRadius;
   final double? horizontalPadding;
   final double? verticalPadding;
@@ -36,7 +38,10 @@ class CustomTextButton extends StatelessWidget {
           fixedSize: MaterialStateProperty.all(
               Size(buttonWidth ?? double.maxFinite, buttonHeight ?? 50.h))),
       onPressed: onPressed,
-      child: Text(buttonText,style: textStyle,),
+      child: Text(
+        buttonText,
+        style: textStyle,
+      ),
     );
   }
 }

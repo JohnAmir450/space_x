@@ -52,8 +52,8 @@ class _PasswordAndEmailState extends State<PasswordAndEmail> {
         children: [
           CustomTextFormField(
               controller: context.read<LoginCubit>().emailController,
-              onChanged: (data){
-                  context.read<LoginCubit>().emailController.text=data;
+              onChanged: (data) {
+                context.read<LoginCubit>().emailController.text = data;
               },
               hintText: 'Email',
               validator: (value) {
@@ -66,8 +66,8 @@ class _PasswordAndEmailState extends State<PasswordAndEmail> {
           verticalSpace(18.h),
           CustomTextFormField(
             controller: context.read<LoginCubit>().passwordController,
-            onChanged: (data){
-              passwordController.text=data;
+            onChanged: (data) {
+              passwordController.text = data;
             },
             isObscureText: isObscurePassword,
             suffixIcon: GestureDetector(

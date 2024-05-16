@@ -13,21 +13,18 @@ class SignUpBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<SignUpCubit, SignUpState>(
       listener: (context, state) {
-        if(state is SignUpSuccessState){
-          showSnackBar(context, text: 'Signed Up Successfully', color: Colors.green);
+        if (state is SignUpSuccessState) {
+          showSnackBar(context,
+              text: 'Signed Up Successfully', color: Colors.green);
           context.pushReplacementNamed(Routes.homeScreen);
-        }else if(state is PickedPhotoState){
-
-          showSnackBar(context, text: 'Photo Selected', color: ColorsManager.mainBlue);
-        }else if(state is ChangePasswordVisibilityState){
-          
-        }
-        
-        else if(state is SignUpFailureState){
+        } else if (state is PickedPhotoState) {
+          showSnackBar(context,
+              text: 'Photo Selected', color: ColorsManager.mainBlue);
+        } else if (state is ChangePasswordVisibilityState) {
+        } else if (state is SignUpFailureState) {
           showSnackBar(context, text: state.errorMessage, color: Colors.red);
-          
-        }else{
-           showDialog(
+        } else {
+          showDialog(
               context: context,
               builder: (context) => const Center(
                     child: CircularProgressIndicator(

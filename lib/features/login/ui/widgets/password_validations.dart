@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:space_x/core/helpers/spacing.dart';
 import 'package:space_x/core/thiming/colors.dart';
@@ -21,17 +20,18 @@ class PasswordValidations extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: [
-        buildValidationRow('At least has 1 lowerCase letter',hasLowerCase),
+        buildValidationRow('At least has 1 lowerCase letter', hasLowerCase),
         verticalSpace(2),
-        buildValidationRow('At least has 1 UpperCase letter',hasUpperCase),
+        buildValidationRow('At least has 1 UpperCase letter', hasUpperCase),
         verticalSpace(2),
-        buildValidationRow('At least has 1 Special Characters',hasSpecialCharacters),
+        buildValidationRow(
+            'At least has 1 Special Characters', hasSpecialCharacters),
         verticalSpace(2),
-        buildValidationRow('At least has 1 Number',hasNumber),
+        buildValidationRow('At least has 1 Number', hasNumber),
         verticalSpace(2),
-        buildValidationRow('At least 8 Characters long',hasMinLength),
+        buildValidationRow('At least 8 Characters long', hasMinLength),
       ],
     );
   }

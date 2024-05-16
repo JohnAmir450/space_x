@@ -11,23 +11,22 @@ class ProfileImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SignUpCubit,SignUpState>(
+    return BlocBuilder<SignUpCubit, SignUpState>(
       builder: (context, state) {
         return Stack(
           alignment: AlignmentDirectional.bottomEnd,
           children: [
-            state is PickedPhotoState? CircleAvatar(
-              radius: 90.h,
-              backgroundImage:FileImage(File(state.profileImagePath))
-                  
-            )
-            :CircleAvatar(
-              radius: 90.h,
-              backgroundImage:
-                  const AssetImage('assets/images/default_profile_image.jpg'),
-            ),
+            state is PickedPhotoState
+                ? CircleAvatar(
+                    radius: 90.h,
+                    backgroundImage: FileImage(File(state.profileImagePath)))
+                : CircleAvatar(
+                    radius: 90.h,
+                    backgroundImage: const AssetImage(
+                        'assets/images/default_profile_image.jpg'),
+                  ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 context.read<SignUpCubit>().pickImage();
               },
               child: const CircleAvatar(
