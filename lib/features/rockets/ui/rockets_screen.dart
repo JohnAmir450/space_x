@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_x/core/helpers/extentions.dart';
 import 'package:space_x/core/routing/routes.dart';
-import 'package:space_x/core/widgets/list_view_widget.dart';
+import 'package:space_x/features/rockets/ui/widgets/list_view_widget.dart';
 import 'package:space_x/features/home/ui/widgets/blurred_back_gorund.dart';
 import 'package:space_x/features/rockets/data/rocket_cubit/rocket_cubit.dart';
 import 'package:shimmer/shimmer.dart';
@@ -29,7 +29,7 @@ class RocketsScreen extends StatelessWidget {
                             context.pushNamed(Routes.rocketDetailsScreen,
                                 arguments: state.rockets[index]);
                           },
-                          child: ListViewWidget(
+                          child: RocketListViewItem(
                             rocketModel: state.rockets[index],
                           )),
                     ));
@@ -37,10 +37,12 @@ class RocketsScreen extends StatelessWidget {
             return Center(child: Text(state.errorMessage));
           } else {
             return Shimmer.fromColors(
-              baseColor: Colors.purple,
-              highlightColor: Colors.blue,
-              child: ShimmerCustomContainer(height: 350,width: 350,)
-            );
+                baseColor: Colors.purple,
+                highlightColor: Colors.blue,
+                child: ShimmerCustomContainer(
+                  height: 350,
+                  width: 350,
+                ));
           }
         },
       ),

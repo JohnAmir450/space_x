@@ -21,13 +21,6 @@ class RocketRepoImpl extends RocketRepo {
           print(item);
         }
       }
-      // for (var i = 0; i < data.length; i++) {
-      //   try {
-      //     rockets.add(RocketModel.fromJson(data[i]));
-      //   }  catch (e) {
-      //     print(e);
-      //   }
-      // }
 
       return right(rockets);
     } catch (e) {
