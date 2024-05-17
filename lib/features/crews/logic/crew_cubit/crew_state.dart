@@ -11,7 +11,6 @@ final class CrewInitial extends CrewState {}
 
 final class CrewLoadingState extends CrewState {}
 
-
 final class CrewSuccessState extends CrewState {
   final List<CrewModel> crews;
 

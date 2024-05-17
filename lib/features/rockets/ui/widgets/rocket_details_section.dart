@@ -5,9 +5,9 @@ import 'package:space_x/core/thiming/styles.dart';
 import 'package:space_x/core/widgets/custom_detalis_list_tile.dart';
 import 'package:space_x/features/rockets/logic/models/rocket_model/rocket_model.dart';
 
-class DetailsSection extends StatelessWidget {
+class RocketDetailsSection extends StatelessWidget {
   final RocketModel rocketModel;
-  const DetailsSection({
+  const RocketDetailsSection({
     super.key,
     required this.rocketModel,
   });

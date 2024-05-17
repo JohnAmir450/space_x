@@ -16,7 +16,6 @@ class CrewRepoImpl extends CrewRepo {
       List<CrewModel> crew = [];
       for (var item in data) {
         crew.add(CrewModel.fromJson(item));
-        
       }
       return right(crew);
     } catch (e) {

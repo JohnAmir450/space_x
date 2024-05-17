@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_x/core/helpers/extentions.dart';
 import 'package:space_x/core/routing/routes.dart';
+import 'package:space_x/core/widgets/custom_error_state_text.dart';
 import 'package:space_x/features/rockets/ui/widgets/list_view_widget.dart';
 import 'package:space_x/features/home/ui/widgets/blurred_back_gorund.dart';
 import 'package:space_x/features/rockets/data/rocket_cubit/rocket_cubit.dart';
@@ -34,12 +35,12 @@ class RocketsScreen extends StatelessWidget {
                           )),
                     ));
           } else if (state is RocketFailureState) {
-            return Center(child: Text(state.errorMessage));
+            return CustomErrorStateMessage(errorText: state.errorMessage);
           } else {
             return Shimmer.fromColors(
                 baseColor: Colors.purple,
                 highlightColor: Colors.blue,
-                child: ShimmerCustomContainer(
+                child: const ShimmerCustomContainer(
                   height: 350,
                   width: 350,
                 ));

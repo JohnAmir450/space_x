@@ -9,6 +9,9 @@ import 'package:space_x/features/crews/ui/crew_details_screen.dart';
 import 'package:space_x/features/crews/ui/crew_screen.dart';
 import 'package:space_x/features/home/logic/home_cubit/home_cubit.dart';
 import 'package:space_x/features/home/ui/home_screen.dart';
+import 'package:space_x/features/launchpads/data/models/launchpads_model/launchpads_model.dart';
+import 'package:space_x/features/launchpads/data/repos/launchpads_repo_implementaion.dart';
+import 'package:space_x/features/launchpads/logic/launchpdas_cubit/launchpads_cubit.dart';
 import 'package:space_x/features/launchpads/ui/launchpads_details_screen.dart';
 import 'package:space_x/features/launchpads/ui/launchpads_screen.dart';
 import 'package:space_x/features/login/logic/login_cubit/login_cubit.dart';
@@ -78,10 +81,16 @@ class AppRouter {
                 ));
 
       case Routes.launchpadsScreen:
-        return MaterialPageRoute(builder: (_) => const LaunchpadsScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => LaunchpadsCubit(getIt.get<LaunchpadsRepoImpl>())..fetchLaunchpads(),
+                  child: const LaunchpadsScreen(),
+                ));
 
-        case Routes.launchpadsDetailsScreen:
-        return MaterialPageRoute(builder: (_) => const LaunchPadsDetailsScreen());
+      case Routes.launchpadsDetailsScreen:
+      var model=settings.arguments as LaunchpadsModel;
+        return MaterialPageRoute(
+            builder: (_) =>  LaunchPadsDetailsScreen(launchpadsModel: model,));
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
