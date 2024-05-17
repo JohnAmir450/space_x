@@ -103,8 +103,10 @@ class CrewDetailsScreen extends StatelessWidget {
                       ),
                       horizontalSpace(15.w),
                       GestureDetector(
-                        onTap: (){
-                          context.read<CrewCubit>().fetchLink(context,link: crewModel.wikipedia!);
+                        onTap: () {
+                          context
+                              .read<CrewCubit>()
+                              .fetchLink(context, link: crewModel.wikipedia!);
                         },
                         child: const Text(
                           'Click Here',

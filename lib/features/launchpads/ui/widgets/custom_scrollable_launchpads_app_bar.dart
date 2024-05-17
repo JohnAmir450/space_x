@@ -1,16 +1,17 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:space_x/core/helpers/extentions.dart';
 import 'package:space_x/core/thiming/colors.dart';
 import 'package:space_x/core/thiming/styles.dart';
-import 'package:space_x/features/rockets/logic/models/rocket_model/rocket_model.dart';
+import 'package:space_x/features/launchpads/data/models/launchpads_model/launchpads_model.dart';
 
-class CustomScrollableRocketAppBar extends StatelessWidget {
-  const CustomScrollableRocketAppBar({
+class CustomScrollableLaunchpadsAppBar extends StatelessWidget {
+  const CustomScrollableLaunchpadsAppBar({
     super.key,
-    required this.rocketModel,
+    required this.launchpadsModel,
   });
 
-  final RocketModel rocketModel;
+  final LaunchpadsModel launchpadsModel;
 
   @override
   Widget build(BuildContext context) {
@@ -41,14 +42,14 @@ class CustomScrollableRocketAppBar extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
             color: Colors.white,
           ),
-          child: Text(rocketModel.name!,
+          child: Text('launchpadsModel',
               style: TextStyles.font16WhiteSemiBold
                   .copyWith(color: ColorsManager.purple)),
         ),
         background: ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: Image.network(
-            rocketModel.flickrImages![0],
+            launchpadsModel.images!.large![0],
             fit: BoxFit.cover,
           ),
         ),

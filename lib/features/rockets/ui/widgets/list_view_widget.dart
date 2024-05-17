@@ -64,17 +64,15 @@ class RocketListViewItem extends StatelessWidget {
               ),
               Transform.translate(
                 offset: const Offset(0, 60),
-                child: Align(
+                child: const Align(
                   alignment: Alignment.bottomCenter,
                   child: CircleAvatar(
                       radius: 30,
                       backgroundColor: Colors.white,
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
+                      child: Icon(
                             Icons.arrow_forward_ios_outlined,
                             size: 30,
-                          ))),
+                          )),
                 ),
               ),
               Align(
