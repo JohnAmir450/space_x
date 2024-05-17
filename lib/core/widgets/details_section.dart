@@ -8,7 +8,8 @@ import 'package:space_x/features/rockets/logic/models/rocket_model/rocket_model.
 class DetailsSection extends StatelessWidget {
   final RocketModel rocketModel;
   const DetailsSection({
-    super.key, required this.rocketModel,
+    super.key,
+    required this.rocketModel,
   });
 
   @override
@@ -27,65 +28,68 @@ class DetailsSection extends StatelessWidget {
             'Overview',
             style: TextStyles.font15DarkBlueMedium,
           ),
+          verticalSpace(16.h),
+          Text(rocketModel.description!),
           verticalSpace(16),
-           Text(rocketModel.description!),
-          verticalSpace(16),
-           CustomDetailsListTile(
+          CustomDetailsListTile(
             title: 'height',
             trailing: '${rocketModel.height!.meters} M',
           ),
           verticalSpace(8),
-           CustomDetailsListTile(
+          CustomDetailsListTile(
             title: 'mass',
             trailing: '${rocketModel.mass!.kg} Kg',
           ),
           verticalSpace(8),
-           CustomDetailsListTile(
+          CustomDetailsListTile(
             title: 'reusable',
-            trailing: rocketModel.active.toString(),textStyle: rocketModel.active==true? TextStyles.font16WhiteSemiBold.copyWith(color: Colors.green):TextStyles.font16WhiteSemiBold.copyWith(color: Colors.red),
+            trailing: rocketModel.active.toString(),
+            textStyle: rocketModel.active == true
+                ? TextStyles.font16WhiteSemiBold.copyWith(color: Colors.green)
+                : TextStyles.font16WhiteSemiBold.copyWith(color: Colors.red),
           ),
           verticalSpace(8),
-           CustomDetailsListTile(
+          CustomDetailsListTile(
             title: 'Number of engines',
             trailing: rocketModel.secondStage!.engines.toString(),
           ),
           verticalSpace(8),
-           CustomDetailsListTile(
+          CustomDetailsListTile(
             title: 'number of Stages',
             trailing: rocketModel.stages!.toString(),
           ),
           verticalSpace(8),
-           CustomDetailsListTile(
+          CustomDetailsListTile(
             title: 'number of boosters',
             trailing: rocketModel.boosters.toString(),
           ),
           verticalSpace(8),
-           CustomDetailsListTile(
+          CustomDetailsListTile(
             title: 'cost per launch',
             trailing: rocketModel.costPerLaunch.toString(),
           ),
           verticalSpace(8),
-           CustomDetailsListTile(
+          CustomDetailsListTile(
             title: 'success rate',
             trailing: '${rocketModel.successRatePct} %',
           ),
           verticalSpace(8),
-           CustomDetailsListTile(
+          CustomDetailsListTile(
             title: 'first flight',
             trailing: rocketModel.firstFlight!,
           ),
           verticalSpace(8),
-           CustomDetailsListTile(
+          CustomDetailsListTile(
             title: 'Type',
             trailing: rocketModel.type!,
           ),
           verticalSpace(8),
-           CustomDetailsListTile(
+          CustomDetailsListTile(
             title: 'Fuel amount tons',
             trailing: rocketModel.secondStage!.fuelAmountTons.toString(),
           ),
           verticalSpace(8),
-            CustomDetailsListTile(
+          CustomDetailsListTile(
             title: 'Burn time per second',
             trailing: rocketModel.secondStage!.burnTimeSec.toString(),
           ),

@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:space_x/core/di/di_setup.dart';
 import 'package:space_x/core/routing/routes.dart';
+import 'package:space_x/features/crews/data/models/crew_model.dart';
+import 'package:space_x/features/crews/data/repos/crew_repo_implementaion.dart';
+import 'package:space_x/features/crews/logic/crew_cubit/crew_cubit.dart';
+import 'package:space_x/features/crews/ui/crew_details_screen.dart';
 import 'package:space_x/features/crews/ui/crew_screen.dart';
 import 'package:space_x/features/home/logic/home_cubit/home_cubit.dart';
 import 'package:space_x/features/home/ui/home_screen.dart';
+import 'package:space_x/features/launchpads/ui/launchpads_details_screen.dart';
 import 'package:space_x/features/launchpads/ui/launchpads_screen.dart';
 import 'package:space_x/features/login/logic/login_cubit/login_cubit.dart';
 import 'package:space_x/features/login/ui/login_screen.dart';
@@ -40,7 +45,22 @@ class AppRouter {
                 ));
 
       case Routes.crewScreen:
-        return MaterialPageRoute(builder: (_) => const CrewScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) =>
+                      CrewCubit(getIt.get<CrewRepoImpl>())..fetchCrew(),
+                  child: const CrewScreen(),
+                ));
+
+      case Routes.crewDetailsScreen:
+        var crews = settings.arguments as CrewModel;
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => CrewCubit(getIt.get<CrewRepoImpl>()),
+                  child: CrewDetailsScreen(
+                    crewModel: crews,
+                  ),
+                ));
 
       case Routes.rocketsScreen:
         return MaterialPageRoute(
@@ -51,11 +71,17 @@ class AppRouter {
                 ));
 
       case Routes.rocketDetailsScreen:
-      var model=settings.arguments as RocketModel;
-        return MaterialPageRoute(builder: (_) =>  RocketDetailsScreen(rocketModel: model,));
+        var model = settings.arguments as RocketModel;
+        return MaterialPageRoute(
+            builder: (_) => RocketDetailsScreen(
+                  rocketModel: model,
+                ));
 
       case Routes.launchpadsScreen:
         return MaterialPageRoute(builder: (_) => const LaunchpadsScreen());
+
+        case Routes.launchpadsDetailsScreen:
+        return MaterialPageRoute(builder: (_) => const LaunchPadsDetailsScreen());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(

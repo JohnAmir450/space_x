@@ -13,7 +13,8 @@ class RocketCubit extends Cubit<RocketState> {
     emit(RocketLoadingState());
     var results = await rocketRepo.fetchRockets();
     results.fold(
-        (failure) => emit(RocketFailureState(errorMessage: failure.errorMessage)),
+        (failure) =>
+            emit(RocketFailureState(errorMessage: failure.errorMessage)),
         (rockets) => emit(RocketSuccessState(rockets: rockets)));
   }
 }
